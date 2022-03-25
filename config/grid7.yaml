@@ -1,0 +1,35 @@
+device: "cuda:1"
+graph_id: 0
+use_tensorboard: True
+save_model: True
+
+num_workers: 2
+
+# training params:
+max_episodes: 50000
+embedding_dim: 16
+hidden_dim: 256
+batch_size: 128
+buffer_size: 50000
+lr: 0.0005
+
+train_every: 16
+train_from: 128
+
+test_every: 256
+test_nepisodes: 50
+
+save_every: 5000
+log_every: 1024
+
+# mtcs params:
+num_sims: 15 # at least 2
+bias: 0.5
+cpuct: 0.3 # larger than 0
+temp: 0.5
+gamma: 1
+
+att_type: "nfsp"
+ban_capacity: 1000
+cache_capacity: 50
+br_rate: 0.1
